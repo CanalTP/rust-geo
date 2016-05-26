@@ -39,7 +39,7 @@ impl Centroid for LineString {
             let mut sum_y = 0.;
             let mut total_length = 0.;
             for (p1, p2) in vect.iter().zip(vect[1..].iter()) {
-                let segment_len = p1.distance_to(&p2);
+                let segment_len = p1.distance(&p2);
                 total_length += segment_len;
                 sum_x += segment_len * ((p1.lng() + p2.lng()) / 2.);
                 sum_y += segment_len * ((p1.lat() + p2.lat()) / 2.);
